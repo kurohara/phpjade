@@ -1,9 +1,9 @@
-# jade4php [![Build Status](https://secure.travis-ci.org/kurohara/jade4php.png?branch=master)](http://travis-ci.org/kurohara/jade4php)
+# jade4php 
 
 The modifier module for jade template engine.  
 This project has created by rewriting the 'jade-php' project to  
-# change the API.  
-# support new feature I personally require.
+1. change the API.  
+2. support new feature I personally require.
 
 The idea of modifying the functionality of the Jade template engine is incorporated from 'jade-php'.  
 
