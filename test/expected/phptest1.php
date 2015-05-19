@@ -1,0 +1,1 @@
+<html><body><?php testfunc(); ?></body></html>
