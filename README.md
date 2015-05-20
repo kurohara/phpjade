@@ -1,4 +1,4 @@
-# jade4php
+# phpjade
 
 The modifier module for Jade template engine.  
 This project has created by rewriting the ['jade-php'](https://github.com/viniwrubleski/jade-php)project, to  
@@ -6,12 +6,12 @@ This project has created by rewriting the ['jade-php'](https://github.com/viniwr
 2. support new feature I personally require.
 
 ## Getting Started
-Install the module with: `npm install jade4php`
+Install the module with: `npm install phpjade`
 
 ```javascript
 var jade = require('jade');
-var jade4php = require('jade4php');
-jade4php.init(jade); // apply modifier.
+var phpjade = require('phpjade');
+phpjade.init(jade); // apply modifier.
 ...
 
 // just use jade.
@@ -33,8 +33,8 @@ Set this option to true to support 'nameless' attributes.
 
 ```javascript
 var jade = require('jade');
-var jade4php = require('jade4php');
-jade4php.init(jade);
+var phpjade = require('phpjade');
+phpjade.init(jade);
 var fn = jade.compileFile(filepath, { usestring:true });
 
 ```
