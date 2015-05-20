@@ -1,7 +1,7 @@
 {
   "name": "jade4php",
   "description": "modifies the jade module to support php output..",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/kurohara/jade4php",
   "author": {
     "name": "Hiroyoshi Kurohara",
