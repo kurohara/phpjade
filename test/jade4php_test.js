@@ -34,7 +34,7 @@ exports['awesome'] = {
     var jade = require('jade');
     jade4php.init(jade);
 
-    var fn = jade.compileFile('test/fixtures/phptest1.jade', {});
+    var fn = jade.compileFile('test/fixtures/phptest1.jade', {usestrip: true});
     var php = fn({});
     var expected = grunt.file.read('test/expected/phptest1.php');
     test.equal(php, expected);
