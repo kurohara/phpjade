@@ -1,6 +1,6 @@
 'use strict';
 
-var jade4php = require('../lib/jade4php.js');
+var jade4php = require('../lib/phpjade.js');
 var grunt = require('grunt');
 
 /*

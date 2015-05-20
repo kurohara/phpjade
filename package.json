@@ -1,26 +1,26 @@
 {
-  "name": "jade4php",
+  "name": "phpjade",
   "description": "modifies the jade module to support php output..",
   "version": "1.0.0",
-  "homepage": "https://github.com/kurohara/jade4php",
+  "homepage": "https://github.com/kurohara/phpjade",
   "author": {
     "name": "Hiroyoshi Kurohara",
     "email": "kurohara@yk.rim.or.jp"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kurohara/jade4php.git"
+    "url": "git://github.com/kurohara/phpjade.git"
   },
   "bugs": {
-    "url": "https://github.com/kurohara/jade4php/issues"
+    "url": "https://github.com/kurohara/phpjade/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/kurohara/jade4php/blob/master/LICENSE-MIT"
+      "url": "https://github.com/kurohara/phpjade/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/jade4php",
+  "main": "lib/phpjade",
   "engines": {
     "node": ">= 0.8.0"
   },
