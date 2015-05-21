@@ -40,6 +40,8 @@ var fn = jade.compileFile(filepath, { usestring:true });
 ```
 
 ### Modified syntax
+The following syntax sample is formatted as if pretty print option is set.
+
 #### attribute as php expression with escape.
 
 ```
@@ -97,6 +99,24 @@ tag
 
 ```html
 <tag><?php php_code ;?></tag>
+```
+
+#### php filter
+
+```
+:php
+  /* some php codes comes here */
+  call_php_function();
+html
+```
+
+```
+<?php
+/* some php codes comes here */
+call_php_function();
+?>
+<html>
+</html>
 ```
 
 ## Examples
