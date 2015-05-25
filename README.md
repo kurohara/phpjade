@@ -136,8 +136,7 @@ html
 <html>
   <body>
     <?php testfunc(); ?>
-    <div <?p
-hp some_php_function(); ?> >test</div>
+    <div <?php some_php_function(); ?> >test</div>
     <?php foreach ($this->list as $list): ?>
       <li><?php echo $list; ?></li>
     <?php endforeach; ?>

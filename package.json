@@ -28,12 +28,14 @@
     "test": "grunt nodeunit"
   },
   "devDependencies": {
-    "constantinople": "^3.0.1",
     "grunt": "~0.4.5",
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-watch": "~0.5.3",
     "jade": "^1.9.2"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "constantinople": "^3.0.1"
+  }
 }
