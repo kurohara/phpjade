@@ -153,3 +153,9 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## License
 Copyright (c) 2015 Hiroyoshi Kurohara  
 Licensed under the MIT license.
+
+## Related projects
+* [grunt-jade-mod](https://github.com/kurohara/grunt-jade-mod)  
+Grunt task module for Jade with modifier support, phpjade can be used with this module.
+* [jade-mod-cli](https://github.com/kurohara/jade-mod-cli)  
+Jade cli with modifier support, phpjade can be used with this.
