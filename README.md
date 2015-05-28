@@ -124,7 +124,7 @@ call_php_function();
 html
   body
     - testfunc();
-    div(__!=-some_php_function())
+    div(__=some_php_function())
       | test
     - foreach ($this->list as $list):
       li!= $list
