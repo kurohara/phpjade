@@ -39,6 +39,33 @@ var fn = jade.compileFile(filepath, { usestring:true });
 
 ```
 
+#### prefunction
+Called just after compiler found php portion of text.  
+Used for remove cumbersome typing from php code.  
+```javascript
+var jade = require('jade');
+require('phpjade').init(jade);
+var fn = jade.compileFile(filepath, {
+           prefunction: function(input, options) {
+             return input.replace(/###/, 'mythemename');
+           }
+         });
+```
+
+```
+html
+  body
+    div!=_e('hello php world!', ###)
+```
+
+```
+<html>
+  <body>
+    <div><?php echo _e('hello php world!', 'mythemename'); ?></div>
+  </body>
+</html>
+```
+
 ### Modified syntax
 The following syntax sample is formatted as if pretty print option is set.
 
@@ -148,10 +175,12 @@ html
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-1.2.0 May 28 2015
-1.1.1 May 25 2015
-1.1.0 May 21 2015
-1.0.0 May 20 2015
+* 1.3.0 Jun 02 2015  
+    capability of calling 'prefunction' has added.  
+* 1.2.0 May 28 2015  
+* 1.1.1 May 25 2015  
+* 1.1.0 May 21 2015  
+* 1.0.0 May 20 2015  
 
 ## License
 Copyright (c) 2015 Hiroyoshi Kurohara  
