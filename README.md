@@ -148,6 +148,9 @@ html
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+1.2.0 May 28 2015
+1.1.1 May 25 2015
+1.1.0 May 21 2015
 1.0.0 May 20 2015
 
 ## License

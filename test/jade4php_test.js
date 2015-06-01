@@ -54,4 +54,26 @@ exports['awesome'] = {
 
     test.done();
   },
+  php_options2: function(test) {
+    test.expect(1);
+    // tests here
+    var jade = require('jade');
+    jade4php.init(jade);
+
+    var fn = jade.compileFile('test/fixtures/phptest2.jade', 
+      {
+        usestrip: true,
+        pretty: true,
+        prefunction: function(input/*, options*/) {
+          return input.replace(/\$\$+/, "'#{data.domain}'"); 
+        },
+      });
+    var php = fn({data: { domain: "mytextdomain" } });
+    var expected = grunt.file.read('test/expected/phptest2.php');
+    test.equal(php, expected);
+    test.done();
+
+    jade4php.restore();
+
+  },
 };

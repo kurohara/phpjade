@@ -36,6 +36,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "constantinople": "^3.0.1"
+    "constantinople": "^3.0.1",
+    "stack-trace": "0.0.9"
   }
 }

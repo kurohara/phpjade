@@ -4,7 +4,7 @@
   "immed": true,
   "latedef": "nofunc",
   "newcap": true,
-  "noarg": true,
+  "noarg": false,
   "sub": true,
   "undef": true,
   "unused": true,
