@@ -47,7 +47,7 @@ var jade = require('jade');
 require('phpjade').init(jade);
 var fn = jade.compileFile(filepath, {
            prefunction: function(input, options) {
-             return input.replace(/###/, 'mythemename');
+             return input.replace(/###/, "'mythemename'");
            }
          });
 ```
