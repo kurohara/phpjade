@@ -1,9 +1,0 @@
-:php
-  /**
-   * @package WordPress
-   * @subpackage $$
-   */
-html
-  body
-    div!=_e('This is my opinion', '$$')
-
