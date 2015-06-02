@@ -65,7 +65,7 @@ exports['awesome'] = {
         usestrip: true,
         pretty: true,
         prefunction: function(input/*, options*/) {
-          return input.replace(/\$\$+/, "'#{data.domain}'"); 
+          return input.replace(/\$\$+/, "#{data.domain}"); 
         },
       });
     var php = fn({data: { domain: "mytextdomain" } });

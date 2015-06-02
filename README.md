@@ -175,6 +175,8 @@ html
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+* 1.3.1 Jun 02 2015  
+    Fixed the bug "In the php filter block, the 'prefunction' couldn't be called".
 * 1.3.0 Jun 02 2015  
     capability of calling 'prefunction' has added.  
 * 1.2.0 May 28 2015  

@@ -1,4 +1,9 @@
-
+<?php 
+/**
+ * @package WordPress
+ * @subpackage mytextdomain
+ */
+?>
 <html>
   <body>
     <div>
