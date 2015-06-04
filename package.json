@@ -28,7 +28,6 @@
     "test": "grunt nodeunit"
   },
   "devDependencies": {
-    "acorn": "^1.2.2",
     "grunt": "~0.4.5",
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-nodeunit": "~0.2.0",
@@ -37,7 +36,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "constantinople": "^3.0.1",
+    "acorn": "^1.2.2",
     "stack-trace": "0.0.9"
   }
 }
