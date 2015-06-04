@@ -1,7 +1,7 @@
 'use strict';
 
-// var jade4php = require('../lib/phpjade.js');
-// var grunt = require('grunt');
+var grunt = require('grunt');
+var jade4php = require('../lib/phpjade.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -28,96 +28,53 @@ exports['awesome'] = {
     // setup here
     done();
   },
-  for_debug: function(test) {
+  php_options: function(test) {
     test.expect(1);
     // tests here
-    var fn;
-    var php;
     var jade = require('jade');
-    var phpjade;
-    phpjade  = require('../lib/phpjade.js');
-    phpjade.init(jade);
+    jade4php.init(jade);
 
-    fn = jade.compileFile('test/fixtures/test7.jade', {usestrip: true, pretty: true});
-    php = fn({data: {val: "efghi" } });
-console.log(php);
-//
-//    if (phpjade) { phpjade.restore(); }
-//
-//    fn = jade.compileFile('test/fixtures/test6.jade', {usestrip: true, pretty: true});
-//    php = fn({data: {val: "efghi" } });
-//console.log(php);
-    test.ok(php);
+    var fn = jade.compileFile('test/fixtures/phptest1.jade', {usestrip: true});
+    var php = fn({});
+    var expected = grunt.file.read('test/expected/phptest1.php');
+    test.equal(php, expected);
+    test.done();
+
+    jade4php.restore();
+
+  },
+  html_options: function(test) {
+    test.expect(1);
+    var jade = require('jade');
+    var fn = jade.compileFile('test/fixtures/htmltest1.jade', {});
+    var html = fn({});
+    var expected = grunt.file.read('test/expected/htmltest1.html');
+
+    test.equal(html, expected);
+
     test.done();
   },
-//  php_options: function(test) {
-//    test.expect(1);
-//    // tests here
-//    var jade = require('jade');
-//    jade4php.init(jade);
-//
-//    var fn = jade.compileFile('test/fixtures/phptest1.jade', {usestrip: true});
-//    var php = fn({});
-//    var expected = grunt.file.read('test/expected/phptest1.php');
-//    test.equal(php, expected);
-//    test.done();
-//
-//    jade4php.restore();
-//
-//  },
-//  html_options: function(test) {
-//    test.expect(1);
-//    var jade = require('jade');
-//    var fn = jade.compileFile('test/fixtures/htmltest1.jade', {});
-//    var html = fn({});
-//    var expected = grunt.file.read('test/expected/htmltest1.html');
-//
-//    test.equal(html, expected);
-//
-//    test.done();
-//  },
-//  php_options2: function(test) {
-//    test.expect(1);
-//    // tests here
-//    var jade = require('jade');
-//    jade4php.init(jade);
-//
-//    var fn = jade.compileFile('test/fixtures/phptest2.jade', 
-//      {
-//        usestrip: true,
-//        pretty: true,
-//        prefunction: function(input/*, options*/) {
-//          return input.replace(/\$\$+/, "#{data.domain}"); 
-//        },
-//      });
-//    var php = fn({data: { domain: "mytextdomain" } });
-//    var expected = grunt.file.read('test/expected/phptest2.php');
-//    test.equal(php, expected);
-//    test.done();
-//
-//    jade4php.restore();
-//
-//  },
-//  php_options3: function(test) {
-//    test.expect(1);
-//    // tests here
-//    var jade = require('jade');
-//    jade4php.init(jade);
-//
-//    var fn = jade.compileFile('test/fixtures/phptest3.jade', 
-//      {
-//        pretty: true,
-//        prefunction: function(input/*, options*/) {
-//          return input.replace(/\$\$+/, "#{data.domain}"); 
-//        },
-//      });
-//    var php = fn({data: { domain: "mytextdomain" } });
-//    var expected = grunt.file.read('test/expected/phptest3.php');
-//    test.equal(php, expected);
-//    test.done();
-//
-//    jade4php.restore();
-//
-//  },
-//
+  php_options2: function(test) {
+    test.expect(1);
+    // tests here
+    var jade = require('jade');
+    jade4php.init(jade);
+
+    var fn = jade.compileFile('test/fixtures/phptest2.jade', 
+      {
+        usestrip: true,
+        pretty: true,
+        prefunction: function(input/*, options*/) {
+          return input.replace(/\$\$+/, "#{data.domain}"); 
+        },
+      });
+    var php = fn({data: { domain: "mytextdomain" } });
+    grunt.file.write('tmp/phptest2.php', php);
+    var expected = grunt.file.read('test/expected/phptest2.php');
+    test.equal(php, expected);
+    test.done();
+
+    jade4php.restore();
+
+  },
 };
