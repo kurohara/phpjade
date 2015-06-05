@@ -146,7 +146,18 @@ call_php_function();
 </html>
 ```
 
+#### conjunction of php code with literal
+```
+div(op!=php_func('abc', "def")+"ghijk")
+```
+
+```
+<div op="<?php echo php_func('abc', "def"); ?>ghijk"></div>
+```
+
 ## Examples
+### example - 1
+
 ```
 html
   body
@@ -171,10 +182,84 @@ html
 </html>
 ```
 
+### example - 2(using prefunction option)
+
+* passing prefunction and data
+
+```javascript
+var jade = require('jade');
+var phpjade = require('phpjade');
+phpjade.init(jade);
+var fn = jade.compileFile(filepath,
+  {
+        usestrip: true,
+        pretty: true,
+        prefunction: function(input/*, options*/) {
+          return input.replace(/\$\$+/, "#{data.domain}");
+        },
+  }
+);
+var php = fn({data: { domain: "mytextdomain" } });
+```
+
+* Jade source
+
+```
+:php
+  /**
+   * @package WordPress
+   * @subpackage $$
+   */
+html
+  body
+    div!=_e('This is my opinion', '$$')
+    div=_test("$$")
+    div
+      - _test("$$")
+    div(op=_test("$$"))
+    div(op!=_test("$$"))
+    div(op=$test)
+    div(op!=$test)
+    div(op="#{data.domain}")
+    div(op="$$")
+    div(op!=php_func('abc', "def", "ghi" + '$$')+"ghijk")
+
+```
+* produced php  
+
+```
+<?php
+/**
+ * @package WordPress
+ * @subpackage mytextdomain
+ */
+?>
+<html>
+  <body>
+    <div>
+      <?php echo _e('This is my opinion', 'mytextdomain'); ?></div>
+    <div>
+      <?php echo htmlspecialchars(_test("mytextdomain"), ENT_QUOTES, 'UTF-8'); ?></div>
+    <div>
+      <?php _test("mytextdomain"); ?>
+    </div>
+    <div op="<?php echo htmlspecialchars(_test("mytextdomain"), ENT_QUOTES, 'UTF-8'); ?>"></div>
+    <div op="<?php echo _test("mytextdomain"); ?>"></div>
+    <div op="<?php echo htmlspecialchars($test, ENT_QUOTES, 'UTF-8'); ?>"></div>
+    <div op="<?php echo $test; ?>"></div>
+    <div op="mytextdomain"></div>
+    <div op="mytextdomain"></div>
+    <div op="<?php echo php_func('abc', "def", "ghi" + 'mytextdomain'); ?>ghijk"> </div>
+  </body>
+</html>
+```
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+* 1.4.0 Jun 04 2015
+    Added support for more complex attributes.
 * 1.3.1 Jun 02 2015  
     Fixed the bug "In the php filter block, the 'prefunction' couldn't be called".
 * 1.3.0 Jun 02 2015  
