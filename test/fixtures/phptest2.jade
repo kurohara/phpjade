@@ -6,7 +6,14 @@
 html
   body
     div!=_e('This is my opinion', '$$')
+    div=_test("$$")
+    div
+      - _test("$$")
+    div(op=_test("$$"))
+    div(op!=_test("$$"))
+    div(op=$test)
+    div(op!=$test)
     div(op="#{data.domain}")
-    div(op!="$$")
+    div(op="$$")
     div(op!=php_func('abc', "def", "ghi" + '$$')+"ghijk") 
 

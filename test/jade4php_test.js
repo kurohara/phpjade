@@ -69,7 +69,6 @@ exports['awesome'] = {
         },
       });
     var php = fn({data: { domain: "mytextdomain" } });
-    grunt.file.write('tmp/phptest2.php', php);
     var expected = grunt.file.read('test/expected/phptest2.php');
     test.equal(php, expected);
     test.done();
