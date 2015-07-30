@@ -35,7 +35,7 @@ Set this option to true to support 'nameless' attributes.
 var jade = require('jade');
 var phpjade = require('phpjade');
 phpjade.init(jade);
-var fn = jade.compileFile(filepath, { usestring:true });
+var fn = jade.compileFile(filepath, { usestrip:true });
 
 ```
 
