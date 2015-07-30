@@ -37,6 +37,8 @@
   "keywords": [],
   "dependencies": {
     "acorn": "^1.2.2",
+    "moduleinfo": "^1.0.0",
+    "semver": "^5.0.1",
     "stack-trace": "0.0.9"
   }
 }

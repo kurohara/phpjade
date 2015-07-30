@@ -258,7 +258,9 @@ html
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-* 1.4.0 Jun 04 2015
+* 1.4.1 Jul 30 2015  
+    Added permissive version check.
+* 1.4.0 Jun 04 2015  
     Added support for more complex attributes.
 * 1.3.1 Jun 02 2015  
     Fixed the bug "In the php filter block, the 'prefunction' couldn't be called".
