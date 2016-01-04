@@ -155,6 +155,15 @@ div(op!=php_func('abc', "def")+"ghijk")
 <div op="<?php echo php_func('abc', "def"); ?>ghijk"></div>
 ```
 
+## Known bugs
+### You may need to add surrounding white space to attribute part.
+```
+div(myattr!=$test['abc'])
+```
+may be mis-converted. if so, use whitespace like:
+```
+div(myattr!= $test['abc'] )
+```
 ## Examples
 ### example - 1
 
