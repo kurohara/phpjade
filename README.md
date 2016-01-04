@@ -292,5 +292,5 @@ Licensed under the MIT license.
 Grunt task module for Jade with modifier support, phpjade can be used with this module.
 * [jade-mod-cli](https://github.com/kurohara/jade-mod-cli)  
 Jade cli with modifier support, phpjade can be used with this.
-* [wptt](https://github.com/kurohara/wptt.git)
+* [wptt](https://github.com/kurohara/wptt.git)  
 WordPress Theme Template, using phpjade.
