@@ -267,6 +267,9 @@ html
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+* 1.4.2 Jan 04 2016
+    Array access expression in attribute part has supported.
+    Version information about Jade that this add-on can work with has updated.
 * 1.4.1 Jul 30 2015  
     Added permissive version check.
 * 1.4.0 Jun 04 2015  
