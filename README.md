@@ -163,7 +163,27 @@ div(myattr!=$test['abc'])
 may be mis-converted. if so, use whitespace like:
 ```
 div(myattr!= $test['abc'] )
+```  
+### Not supported php operators at attribute position
+#### String concatenation '.'
+This doesn't work.
 ```
+div(myattr!= $var1 . 'test')
+```  
+### The first line for php filter cannot be a blank line.
+This does not work.
+```
+:php
+  
+  function testfunction() {
+```
+Please modify like:  
+```
+:php
+  /* some comment */
+  function testfunction() {
+```
+
 ## Examples
 ### example - 1
 
